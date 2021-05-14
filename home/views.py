@@ -12,6 +12,7 @@ def logout_user(request):
     logout(request)
     return redirect('/')
 
+
 @login_required(login_url='/')
 def main(request):
     return render(request,"main.html")
@@ -32,5 +33,6 @@ def submit(request):
             login(request,user)
             return redirect('/main')
         else:
-            messages.error(request, 'Usuario ou senha invalido!!')
+            messages.error(request, 'Usuário ou senha inválida!')
     return redirect('/')
+    
